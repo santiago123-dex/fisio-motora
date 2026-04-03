@@ -1,0 +1,77 @@
+---
+const services = [
+  {
+    title: 'Rehabilitación deportiva',
+    number: '01',
+    description:
+      'Acompañamos lesiones musculares, tendinopatías, esguinces y retorno al deporte con progresiones claras, control de carga y objetivos medibles.',
+    accent: 'cyan',
+  },
+  {
+    title: 'Fisioterapia manual',
+    number: '02',
+    description:
+      'Movilizaciones, liberación miofascial y técnicas analgésicas integradas a un plan activo para mejorar dolor, movilidad y función cotidiana.',
+    accent: 'white',
+  },
+  {
+    title: 'Punción seca',
+    number: '03',
+    description:
+      'Intervención precisa sobre puntos gatillo y tejido irritable cuando el cuadro clínico lo necesita, siempre dentro de una estrategia completa.',
+    accent: 'magenta',
+  },
+  {
+    title: 'Reeducación postural',
+    number: '04',
+    description:
+      'Analizamos patrones de movimiento, hábitos de carga y control corporal para ayudarte a sostener cambios que duren fuera de la camilla.',
+    accent: 'white',
+  },
+  {
+    title: 'Fisioterapia neurológica',
+    number: '05',
+    description:
+      'Intervenciones enfocadas en equilibrio, coordinación, control motor y autonomía funcional para recuperar seguridad en cada gesto.',
+    accent: 'cyan',
+  },
+];
+---
+
+<section id="servicios" class="px-4 py-20 md:px-8 md:py-28">
+  <div class="section-shell">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start">
+      <div class="lg:sticky lg:top-28">
+        <span class="section-label"><span class="eyebrow-dot"></span>Servicios</span>
+        <h2 class="display-title mt-6 max-w-xl text-4xl text-white sm:text-5xl md:text-6xl">
+          Tratamientos que responden a <span class="gradient-text">cómo te mueves</span>, no solo a cómo duele.
+        </h2>
+        <p class="mt-6 max-w-lg text-base leading-8 text-white/72 md:text-lg">
+          Diseñamos cada proceso a partir de hallazgos clínicos, objetivos de vida real y progresiones que tengan sentido para tu cuerpo,
+          tu deporte o tu trabajo.
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        {services.map((service, index) => (
+          <article
+            class={`surface-panel group grid gap-5 rounded-[2rem] px-6 py-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-8 md:px-8 md:py-8 ${index % 2 === 1 ? 'md:translate-x-8' : ''}`}
+          >
+            <div>
+              <p class={`font-heading text-6xl font-bold tracking-[-0.08em] ${service.accent === 'cyan' ? 'text-cyan' : service.accent === 'magenta' ? 'text-magenta' : 'text-white/35'}`}>
+                {service.number}
+              </p>
+            </div>
+            <div class="max-w-2xl">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="font-heading text-2xl font-semibold text-white md:text-3xl">{service.title}</h3>
+                <span class="h-px flex-1 bg-linear-to-r from-white/0 via-white/20 to-white/0"></span>
+              </div>
+              <p class="mt-4 text-base leading-8 text-white/72 md:text-lg">{service.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

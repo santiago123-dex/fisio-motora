@@ -1,0 +1,57 @@
+---
+const links = [
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#diferenciales', label: 'Método' },
+  { href: '#equipo', label: 'Equipo' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="section-shell pt-4">
+    <div class="glass-panel flex items-center justify-between rounded-full px-4 py-3 md:px-6">
+      <a href="#inicio" class="flex items-center gap-3">
+        <span class="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/5">
+          <svg viewBox="0 0 64 64" class="h-7 w-7" aria-hidden="true">
+            <defs>
+              <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00B4D8"></stop>
+                <stop offset="100%" stop-color="#E91E8C"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M32 6C43 15 51 26 51 37C51 49 43 58 32 58C21 58 13 49 13 37C13 26 21 15 32 6Z"
+              fill="none"
+              stroke="url(#brand-gradient)"
+              stroke-width="4"
+            ></path>
+            <path
+              d="M32 17V47M26 23C30 25 34 25 38 23M26 32C30 34 34 34 38 32M26 41C30 43 34 43 38 41"
+              stroke="#0A0A0A"
+              stroke-width="3"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+          <span class="pulse-glow absolute inset-0 rounded-full bg-cyan/10 blur-xl"></span>
+        </span>
+        <span class="flex flex-col leading-none">
+          <span class="font-heading text-lg font-bold tracking-[0.16em] text-white uppercase">Fisio</span>
+          <span class="-mt-1 font-heading text-lg font-bold tracking-[0.16em] text-magenta uppercase">Motora</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-7 md:flex">
+        {links.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-white/78 transition hover:text-white">{link.label}</a>
+        ))}
+      </nav>
+
+      <a
+        href="#contacto"
+        class="magnetic-button rounded-full bg-linear-to-r from-cyan to-magenta px-5 py-2.5 text-sm font-semibold text-bg"
+      >
+        Reservar cita
+      </a>
+    </div>
+  </div>
+</header>
