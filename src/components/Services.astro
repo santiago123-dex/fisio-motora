@@ -55,7 +55,7 @@ const services = [
       <div class="space-y-5">
         {services.map((service, index) => (
           <article
-            class={`surface-panel group grid gap-5 rounded-[2rem] px-6 py-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-8 md:px-8 md:py-8 ${index % 2 === 1 ? 'md:translate-x-8' : ''}`}
+            class={`surface-panel group grid gap-5 rounded-4xl px-6 py-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-8 md:px-8 md:py-8 ${index % 2 === 1 ? 'md:translate-x-8' : ''}`}
           >
             <div>
               <p class={`font-heading text-6xl font-bold tracking-[-0.08em] ${service.accent === 'cyan' ? 'text-cyan' : service.accent === 'magenta' ? 'text-magenta' : 'text-white/35'}`}>
